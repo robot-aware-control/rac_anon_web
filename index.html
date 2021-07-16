@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Robot-Aware Control</title>
+
+    
+    <meta property="og:title" content="Know Thyself: Transferable Visuomotor Control Through Robot-Awareness">
+    <meta property="og:description" content="We address the problem of transferring a policy trained on one robot to another robot. Our method, Robot-Aware Control (RAC), composes a robot-invariant world dynamics model with a robot-specific analytical dynamics model to enable zero-shot transfer to unseen robots.">
+    <meta property="og:image" content="https://robot-aware-control.github.io/rac_anon_website/img/thumbnail.png">
+    <meta property="og:image:secure_url" content="https://robot-aware-control.github.io/rac_anon_website/img/thumbnail.png" /> 
+    <meta property="og:image:type" content="image/png" /> 
+    <meta property="og:image:width" content="968" /> 
+    <meta property="og:image:height" content="680" />
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1.0">
+
+    <link rel="icon"  href="img/favicon.ico">
+    <link rel="stylesheet" href="assets/w3.css">
+    <link href="assets/css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Showdown -->
+    <script src="assets/showdown.min.js"></script>
+    <script src="assets/figure-extension.js"></script>
+
+    <!-- jQuery -->
+    <script src="assets/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- WAVE -->
+    <link rel="stylesheet" href="assets/materialize.min.css">
+    <script src="assets/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="assets/theme.css">
+    <!--lazy loading-->
+    <script src="https://https://cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
+
+    <script>
+        const classMap = {
+            ul: 'browser-default'
+        }
+
+        const bindings = Object.keys(classMap)
+        .map(key => ({
+            type: 'output',
+            regex: new RegExp(`<${key}(.*)>`, 'g'),
+            replace: `<${key} class="${classMap[key]}" $1>`
+        }));
+
+        const converter = new showdown.Converter({
+            extensions: [bindings, 'figure']
+        });
+        converter.setOption('parseImgDimensions', true);
+        converter.setOption('tables', true);
+        converter.setFlavor('github');
+
+        $("#markdown-body").ready(() => {
+            $.get( "content.md", (data) => {
+                const content_html = converter.makeHtml(data);
+                $("#markdown-body").html(content_html);
+            });
+        });
+
+    </script>
+
+    </head><body>
+        <!-- Header -->
+        <!-- Wide screen -->
+        <header class="hd-container w3-container hide-narrow content-center">
+            <div class="w3-cell-row" style="width: 90%; margin: auto; max-width: 1600px; margin-top: 80px; margin-bottom: 40px">
+                <div class="w3-container w3-cell w3-cell-middle">
+                    <div class="title">Know Thyself: Transferable Visuomotor Control<br>Through Robot-Awareness</div>
+                    <!-- Author -->
+                    <div class="w3-row-padding">
+                        <div class="authorship-container">
+                            <ul class="horizontal-list">
+                                <li><a href="" target="_blank"><i class="far fa-user"></i> Anonymous</a></li>
+                            </ul>
+                        </div>
+                        <div class="w3-card-4 w3-round-large furniture-grid" style="width: 80%; max-width: 1280px">
+                                <img width="100%" height="100%" src="img/RA_Teaser_GIF.gif">
+                        </div>
+                    </div>
+                    <!-- Abstract -->
+                    <div class="excerpt w3-padding-16" style="width: 80%; max-width: 1280px; margin: auto;">
+                        We address the problem of transferring a policy trained on one robot to another robot. Our method, Robot-Aware Control (RAC), composes a robot-invariant world dynamics model with a robot-specific analytical dynamics model and optimizes a robot-aware planning cost to enable <span style="font-size:20px; font-weight:1000">zero-shot transfer</span> to unseen robots.
+                    </div>
+            </div>
+        </header>
+
+        <!-- Narrow screen -->
+        <header class="hd-container w3-container hide-wide">
+            <div class="w3-row-padding w3-center w3-padding-24">
+                <span class="title">Know Thyself: Transferable Visuomotor Control<br>Through Robot-Awareness</span>
+            </div>
+            <div class="w3-row-padding">
+                <!-- Author -->
+                <div class="authorship-container">
+                    <ul class="horizontal-list">
+                        <li><a href="" target="_blank"><i class="far fa-user"></i>Anonymous</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="w3-card-4 w3-round-large furniture-grid" style="width: 80%; max-width: 400px">
+                    <img width="100%" height="100%" src="img/RA_Teaser_GIF.gif">
+            </div>
+            <div class="w3-row-padding"><hr></div>
+            <div class="w3-row-padding w3-padding-16">
+                <div class="excerpt">
+                        We address the problem of transferring a policy trained on one robot to another robot. Our method, Robot-Aware Control (RAC), composes a robot-invariant world dynamics model with a robot-specific analytical dynamics model and optimizes a robot-aware planning cost to enable <b>zero-shot transfer</b> to unseen robots.
+                </div>
+            
+        </header>
+
+        <!-- Main Body -->
+        <div class="main-body">
+            <div class="w3-container">
+                <div class="w3-content" style="max-width:1000px;">
+                    <!-- Links -->
+                    <div class="link-container">
+                        <ul class="horizontal-list">
+                            <li><button class="w3-button waves-effect waves-light w3-card-4 grey lighten-2 w3-round-large"><i class="fas fa-file-alt"></i> <a href="" target="_blank"> Paper </a></button></li>
+                            <li><button class="w3-button waves-effect waves-light w3-card-4 grey lighten-2 w3-round-large"><i class="fas fa-code"></i> <a href="" target="_blank"> Code </a></button></li>
+                        </ul>
+                    </div>
+                    <!-- Markdown Body -->
+                    <div id="markdown-body"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-center w3-light-grey w3-padding-32 w3-small">
+            <div style="width: 70%; max-width: 1280px; margin: auto;" >
+                <p align="left" style="color: grey">
+                </p>
+            </div>
+        </footer>
+
+    
+
+</body></html>
